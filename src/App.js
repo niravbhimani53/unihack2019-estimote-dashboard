@@ -1,28 +1,48 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { Switch, Route } from 'react-router-dom'
+import './App.scss'
+import DashBoard from './views/dashboard'
+import Login from './views/login'
+import 'materialize-css/dist/css/materialize.min.css'
+import Header from './components/header'
+import { CONSTANTS } from './helper/urlConstants'
+import 'material-icons'
 
 class App extends Component {
+  componentDidMount() {
+    document.title = "Estimote Dashboard"
+  }
+
+  loginStatus = (status) => {
+    this.setState({
+      loginStatus: status
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        {
+          window.location.pathname !== '/' ? (
+            <header>
+              <Header />
+            </header>
+          ) : null
+        }
+
+        <main>
+          <Switch>
+            <Route exact path={CONSTANTS.URL.DASHBOARD} component={DashBoard} />
+            <Route path={CONSTANTS.URL.HOME} component={Login} loginStatus={this.loginStatus} history={this.props.history} />
+          </Switch>
+        </main>
+
+        <footer>
+
+        </footer>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
