@@ -139,7 +139,7 @@ export default class DashBoard extends Component {
                 <table>
                   <thead>
                     <tr>
-                      <th>Device ID</th>
+                      <th>Room ID</th>
                       <th>Time Stamp</th>
                     </tr>
                   </thead>
