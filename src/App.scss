@@ -7,13 +7,20 @@
 }
 
 .DashBoard {
-  .map-floor {
-    border: 0.5px black solid;
+  button {
+    width: 100%;
+  }
+  .sub-title {
+    border: 1px solid black;
   }
 
-  table {
-    width: 80%;
+  .active {
+    background-color: #DB4455;
+    
   }
+  // table {
+  //   width: 80%;
+  // }
 
   th, td {
     padding: 30px;
@@ -34,3 +41,4 @@
 #add {
   padding: 0 15px;
 }
+

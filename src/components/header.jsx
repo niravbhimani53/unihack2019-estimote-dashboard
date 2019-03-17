@@ -16,13 +16,6 @@ export default class Header extends Component {
             <nav>
               <div className="nav-wrapper">
                 <a href="#!" className="brand-logo center">Dashboard</a>
-                <ul className="right">
-                  <li className="modal-trigger" data-target="modal1">
-                    <i className="material-icons" id="add">
-                      add
-                    </i>
-                  </li>
-                </ul>
               </div>
             </nav>
           </div>
